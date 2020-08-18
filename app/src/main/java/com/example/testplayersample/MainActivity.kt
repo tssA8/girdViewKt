@@ -51,14 +51,14 @@ class MainActivity : AppCompatActivity() {
                     .setMessage("我真的沒有要做壞事, 給我權限吧?")
                     .setPositiveButton("OK") { _, _ ->
                         ActivityCompat.requestPermissions(this@MainActivity,
-                            arrayOf(Manifest.permission.CAMERA),
+                            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
                             MY_PERMISSIONS_REQUEST_READ_CONTACTS)
                     }
                     .setNegativeButton("No") { _, _ -> finish() }
                     .show()
             } else {
                 ActivityCompat.requestPermissions(this@MainActivity,
-                    arrayOf(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE),
+                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE),
                     MY_PERMISSIONS_REQUEST_READ_CONTACTS)
             }
         }
