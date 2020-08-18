@@ -1,7 +1,8 @@
 package com.example.testplayersample
 
-import android.content.Intent
-import android.net.Uri
+import android.Manifest
+import android.app.AlertDialog
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -11,6 +12,8 @@ import android.widget.GridView
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.testplayersample.Beans.DemoVideoInfoBean
 import com.example.testplayersample.adapters.DemoVideoAdapter
 import kotlinx.coroutines.flow.Flow
@@ -23,22 +26,42 @@ import java.io.File
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private val TAG = "MainActivity"
-    private var gridView: GridView? = null
-    private var rootView: RelativeLayout? = null
-    private var ivQrCode: ImageView? = null
-    private var gridViewAdapter: DemoVideoAdapter? = null
-    /**
-     * @param SDCARD_DIR_APP_ROOT
-     * Put Mp4 in [system/media/tutorial]
-     * */
-    private val SDCARD_DIR_APP_ROOT = "/media/tutorial"
-    //Debug
-    private val DB_FOLDER_NAME = "DBsaves/mp4"
+    companion object {
+        private const val MY_PERMISSIONS_REQUEST_READ_CONTACTS = 100
+        private val TAG = "MainActivity"
+        private var gridView: GridView? = null
+        private var rootView: RelativeLayout? = null
+        private var ivQrCode: ImageView? = null
+        private var gridViewAdapter: DemoVideoAdapter? = null
+        /**
+         * @param SDCARD_DIR_APP_ROOT
+         * Put Mp4 in [system/media/tutorial]
+         * */
+        private val SDCARD_DIR_APP_ROOT = "/media/tutorial"
+        //Debug
+//        private val DB_FOLDER_NAME = "DBsaves/mp4"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (ContextCompat.checkSelfPermission(this@MainActivity,  Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this@MainActivity,       Manifest.permission.CAMERA)) {
+                AlertDialog.Builder(this@MainActivity)
+                    .setMessage("我真的沒有要做壞事, 給我權限吧?")
+                    .setPositiveButton("OK") { _, _ ->
+                        ActivityCompat.requestPermissions(this@MainActivity,
+                            arrayOf(Manifest.permission.CAMERA),
+                            MY_PERMISSIONS_REQUEST_READ_CONTACTS)
+                    }
+                    .setNegativeButton("No") { _, _ -> finish() }
+                    .show()
+            } else {
+                ActivityCompat.requestPermissions(this@MainActivity,
+                    arrayOf(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE),
+                    MY_PERMISSIONS_REQUEST_READ_CONTACTS)
+            }
+        }
         gridView = findViewById<GridView>(R.id.gridviews)
         ivQrCode = findViewById<ImageView>(R.id.iv_qrcode)
         rootView = findViewById<RelativeLayout>(R.id.root_view)
@@ -150,6 +173,20 @@ class MainActivity : AppCompatActivity() {
                 m.invoke(null)
             } catch (e: Exception) {
                 e.printStackTrace()
+            }
+        }
+    }
+
+
+
+    override fun onRequestPermissionsResult(requestCode: Int,  permissions: Array<String>, grantResults: IntArray) {
+        when (requestCode) {
+            MY_PERMISSIONS_REQUEST_READ_CONTACTS  -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                } else {
+                    finish()
+                }
+                return
             }
         }
     }
