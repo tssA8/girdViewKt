@@ -1,7 +1,7 @@
 # GridView + Coroutines
 =================================
 
-##Usage
+## Usage
 
 Change file path [SDCARD_DIR_APP_ROOT]
 private val SDCARD_DIR_APP_ROOT = "/media/tutorial"
