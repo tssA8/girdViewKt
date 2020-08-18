@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="recommend_function_card_large_bg_color">#1E6996</color>
+    <color name="recommend_function_card_large_button_bg_color">#0FB4D7</color>
+
+    <color name="focus_frame_border_color">#00ffff</color>
+    <color name="focus_frame_fill_color">#1e6996</color>
+
+
+    <color name="color_text_color_white">#FFFFFF</color>
+    <color name="color_text_color_gay">#7687b0</color>
+
+    <color name="colorSwitchTrackChecked">#00ffff</color>
+    <color name="colorSwitchTrackUnchecked">#505082</color>
+
+    <color name="color_ezwrite_start">#fd00b4a2</color>
+    <color name="color_ezwrite_end">#007072</color>
+    <color name="color_ezwrite_button">#17c2e7</color>
+    <color name="color_ezwrite_background_button">#19124b</color>
+    <color name="color_ezwrite_background_button_unselect">#8019124b</color>
+    <color name="color_multi_window_backgrounds_start">#4aa3cc</color>
+    <color name="color_multi_window_backgrounds_end">#17488f</color>
+    <color name="all_app_widgets_app_text_bg">#7c74a8</color>
+    <color name="all_app_widget_bg">#3b384c</color>
+    <color name="help_page_grid_view_bg">#803b384c</color>
+    <color name="help_page_qrcode_view_bg">#FF3b384c</color>
+    <color name="help_page_live_demo">#b36c668d</color>
+    <color name="help_page_title_bar_bg">#6c668d</color>
+    <color name="help_page_demo_video_bg">#3b384c</color>
+    <color name="all_apps_cs_tips_color">#FFFFFF</color>
+    <color name="menu_bar_recent_user_press_border_color">#00ffff</color>
+    <color name="menu_bar_recent_user_press_fill_color">#1e6996</color>
+</resources>

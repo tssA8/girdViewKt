@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/demo_video_width"
+        android:layout_height="@dimen/demo_video_height"
+        android:layout_centerInParent="true"
+        android:background="@color/help_page_demo_video_bg"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/demo_video_title_height"
+            android:background="@color/help_page_title_bar_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Demo Video"
+                android:textColor="@color/color_text_color_white"
+                android:textSize="@dimen/demo_video_title_text_size"></TextView>
+        </FrameLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_video_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/fl_qrcode"
+                android:layout_width="@dimen/demo_video_live_qr_code_left_container_width"
+                android:layout_height="match_parent"
+                android:background="@color/help_page_qrcode_view_bg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_qrcode"
+                            android:layout_width="@dimen/demo_video_live_iv_qrcode_scan_height_width"
+                            android:layout_height="@dimen/demo_video_live_iv_qrcode_scan_height_width"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/color_text_color_white"></ImageView>
+
+                        <TextView
+                            android:id="@+id/tv_qrcode"
+                            android:layout_width="@dimen/demo_video_live_demo_qrcode_scan_width"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_qrcode"
+                            android:gravity="center"
+                            android:text="@string/demo_video_scan_qrcode"
+                            android:textColor="@color/color_text_color_white"
+                            android:textSize="@dimen/demo_video_live_demo_scan_qr_code"></TextView>
+                    </RelativeLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/ll_grid_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/fl_qrcode"
+                android:background="@color/help_page_grid_view_bg">
+
+                <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/gridviews"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:columnWidth="@dimen/demo_video_child_item_height"
+                    android:gravity="center"
+                    android:horizontalSpacing="@dimen/demo_video_horizontal_spacing"
+                    android:numColumns="3"
+                    android:padding="@dimen/demo_video_child_item_padding"
+                    android:scrollbars="vertical"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="@dimen/demo_video_horizontal_spacing"></GridView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

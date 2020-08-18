@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--DemoVideo Activity-->
+    <dimen name="demo_video_height">479dp</dimen>
+    <dimen name="demo_video_width">512dp</dimen>
+    <dimen name="demo_video_title_height">44dp</dimen>
+    <dimen name="demo_video_title_text_size">16sp</dimen>
+    <dimen name="demo_video_child_item_height">112dp</dimen>
+    <dimen name="demo_video_child_item_padding">19dp</dimen>
+    <dimen name="demo_video_horizontal_spacing">6dp</dimen>
+    <dimen name="demo_video_button_more_width">110dp</dimen>
+    <dimen name="demo_video_button_more_height">32dp</dimen>
+    <dimen name="demo_video_button_text_size">13sp</dimen>
+    <dimen name="demo_video_button_more_container_height">64dp</dimen>
+    <dimen name="demo_video_live_video_container_height_width">81dp</dimen>
+    <dimen name="demo_video_live_demo_container_height_width">50dp</dimen>
+    <dimen name="demo_video_live_demo_container_padding">6dp</dimen>
+    <dimen name="demo_video_live_demo_container_margin_top">11dp</dimen>
+    <dimen name="demo_video_live_demo_scan_qr_code">9sp</dimen>
+    <dimen name="demo_video_live_demo_qrcode_scan_width">100dp</dimen>
+    <dimen name="demo_video_live_iv_qrcode_scan_height_width">80dp</dimen>
+    <dimen name="demo_video_live_qr_code_left_container_width">118dp</dimen>
+    <dimen name="demo_video_more_video_view_width">421dp</dimen>
+    <dimen name="demo_video_more_video_view_height">306dp</dimen>
+    <dimen name="demo_video_more_video_title_height">41dp</dimen>
+    <dimen name="demo_video_qrcode_more_video_width_height">156dp</dimen>
+</resources>

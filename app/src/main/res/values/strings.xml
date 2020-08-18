@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TestPlayerSample</string>
+    <string name="demo_video_more_video_button">More video</string>
+    <string name="demo_video_scan_qrcode">Scan the QR code to get user manual</string>
+    <string name="title_activity_demo_video_more_video">DemoVideoMoreVideo</string>
+    <string name="title_activity_demo_video_more_view">DemoVideoMoreView</string>
+    <string name="demo_video_more_video_title">Scan the QR code to receive the user manual of BenQ Signage</string>
+    <string name="demo_video_help">Help</string>
+    <string name="title_activity_demo_video">DemoVideo</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
