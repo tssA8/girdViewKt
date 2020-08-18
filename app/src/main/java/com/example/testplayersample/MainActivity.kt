@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
          * */
         private val SDCARD_DIR_APP_ROOT = "/media/tutorial"
         //Debug
-//        private val DB_FOLDER_NAME = "DBsaves/mp4"
+//        private val DB_FOLDER_NAME = "DBsaves"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,13 +95,17 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * Load Downloads files and show in gridView
+     * */
     private fun getDemoVideoList(): ArrayList<DemoVideoInfoBean.DemoVideoFileBean> {
         val originalDownloadFileBeanLists: ArrayList<DemoVideoInfoBean.DemoVideoFileBean> =
             ArrayList<DemoVideoInfoBean.DemoVideoFileBean>()
-        val fileEvents = File(Environment.getRootDirectory().absolutePath + SDCARD_DIR_APP_ROOT)
+        //IFP
+//        val fileEvents = File(Environment.getRootDirectory().absolutePath + SDCARD_DIR_APP_ROOT)
 
         ///Debug
-//        val fileEvents = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), DB_FOLDER_NAME)
+        val fileEvents = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "")
 
         val files = fileEvents.listFiles()
         if (files.size != 0) {
