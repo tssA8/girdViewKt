@@ -23,6 +23,7 @@ import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.io.File
+import java.lang.reflect.Method
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -172,9 +173,8 @@ class MainActivity : AppCompatActivity() {
     private fun disableDeathOnFileUriExposure() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             try {
-                val cls = StrictMode::class.java
-                val m = cls.getMethod("disableDeathOnFileUriExposure", String::class.java)
-                m.invoke(null)
+                val method: Method = StrictMode::class.java.getDeclaredMethod("disableDeathOnFileUriExposure")
+                method.invoke("")
             } catch (e: Exception) {
                 e.printStackTrace()
             }
